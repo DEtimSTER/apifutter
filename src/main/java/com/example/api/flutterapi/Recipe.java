@@ -3,23 +3,25 @@ package com.example.api.flutterapi;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "transactions")
-public class Transaction {
+@Table(name = "recipe")
+public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String description;
-    private int amount;
+    private String recipetitel;
     private String category;
+	private String image_url;
 
-    public Transaction() {}
+    public Recipe() {}
 
-    public Transaction(String description, int amount, String category) {
+    public Recipe(String description, String recipetitel, String category, String image_url, String recipe) {
         this.description = description;
-        this.amount = amount;
+        this.recipetitel = recipetitel;
         this.category = category;
+		this.image_url = image_url;
     }
 
     public int getId() {
@@ -38,14 +40,6 @@ public class Transaction {
         this.description = description;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -53,4 +47,20 @@ public class Transaction {
     public void setCategory(String category) {
         this.category = category;
     }
+
+	public String getRecipetitel() {
+		return recipetitel;
+	}
+
+	public void setRecipetitel(String recipetitel) {
+		this.recipetitel = recipetitel;
+	}
+
+	public String getImage_url() {
+		return image_url;
+	}
+
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
 }
