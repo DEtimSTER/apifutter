@@ -14,14 +14,16 @@ public class Recipe {
     private String recipetitel;
     private String category;
 	private String image_url;
+	private Boolean recomendable;
 
     public Recipe() {}
 
-    public Recipe(String description, String recipetitel, String category, String image_url, String recipe) {
+    public Recipe(String description, String recipetitel, String category, String image_url, String recipe, Boolean recomendable) {
         this.description = description;
         this.recipetitel = recipetitel;
         this.category = category;
 		this.image_url = image_url;
+		this.recomendable = recomendable;
     }
 
     public int getId() {
@@ -62,5 +64,13 @@ public class Recipe {
 
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
+	}
+
+	public Boolean getRecomendable() {
+		return recomendable;
+	}
+
+	public void setRecomendable(Boolean recomendable) {
+		this.recomendable = recomendable;
 	}
 }
